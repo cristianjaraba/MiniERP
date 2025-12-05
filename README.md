@@ -84,5 +84,4 @@ Die Anwendung nutzt eine **MySQL-Datenbank über ODBC** und ermöglicht grundleg
 1. **Person auswählen** → Bestellungen anzeigen  
 2. **Artikel anzeigen / hinzufügen / löschen**  
 3. **Lieferanten anzeigen / hinzufügen / löschen**  
-4. **Beenden** über Button oder Fenster schließen
 
