@@ -1,0 +1,40 @@
+﻿<Window x:Class="MiniERP.Lieferanten"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniERP"
+        mc:Ignorable="d"
+        Title="Lieferanten" Height="450" Width="800">
+    <Viewbox>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <ListBox x:Name="lbLieferanten" Height="200" Width="300" Margin="100"/>
+            <Button x:Name="btnLoeschen" Grid.Row="1" Content="Löschen" Width="100" Height="30" Click="btnLoeschen_Click" />
+            <StackPanel Grid.Column="1">
+                <Label Content="Lieferanten hinzufügen" HorizontalContentAlignment="Center" Width="200" FontWeight="Bold" FontSize="16" Margin="10"/>
+                <ComboBox x:Name="cbPersonen" Width="150" SelectionChanged="cbPersonen_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Right" Text="{Binding vorname}" FontWeight="Thin" Width="50"/>
+                                <TextBlock DockPanel.Dock="Left" Text="{Binding nachname}" FontWeight="Bold" Width="65" Margin="0,0,10,0"/>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Label Content="Firmenname:" Width="150" FontWeight="Bold" FontSize="16" Margin="10"/>
+                <TextBox x:Name="tbFirma" Width="150" Height="30"/>
+                <Button x:Name="btnAdd" Content="Hinzufügen" Width="100" Height="30" Click="btnAdd_Click" Margin="10"/>
+            </StackPanel>
+            <Button x:Name="btnZurueck" Grid.Row="1" Grid.Column="1" Content="Zurück" Width="100" Height="30" Click="btnZurueck_Click" />
+        </Grid>
+    </Viewbox>
+</Window>

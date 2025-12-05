@@ -1,0 +1,74 @@
+﻿<Window x:Class="MiniERP.Artikel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MiniERP"
+        mc:Ignorable="d"
+        Title="Artikel" Height="450" Width="800">
+    <Viewbox Stretch="Uniform">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="20,50,50,50">
+                <ListBox x:Name="lbArtikel" Width="400" Height="287">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding name}" Width="100" FontWeight="Bold" FontSize="12"/>
+                                <TextBlock Text="{Binding beschreibung}" Width="100" FontWeight="Thin" FontSize="12"/>
+                                <TextBlock Text="{Binding farbe}" Width="50" FontWeight="Bold" FontSize="10"/>
+                                <TextBlock Text="{Binding groesse}" Width="75" FontWeight="Bold" FontSize="10"/>
+                                <TextBlock Text="{Binding preis}" Width="50" FontWeight="Bold" FontSize="10"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="45,20,20,20">
+                <Label x:Name="lblArtikel" Width="150" FontWeight="Bold" FontSize="16" Content="Artikel hinzufügen"/>
+                <StackPanel Orientation="Vertical" DataContext="{Binding SelectedItem, ElementName=cbPersonen}">
+                    <DockPanel Width="300">
+                        <Label x:Name="lblName" DockPanel.Dock="Left" Width="100" Height="30" Content="Name:"/>
+                        <TextBox Name="tbName" DockPanel.Dock="Right" Width="200" Height="30" Text="{Binding name}" />
+                    </DockPanel>
+                    <DockPanel Width="300">
+                        <Label x:Name="lblBeschreibung" DockPanel.Dock="Left" Width="100" Height="30" Content="Beschreibung:"/>
+                        <TextBox Name="tbBeschreibung" DockPanel.Dock="Right" Width="200" Height="30" Text="{Binding beschreibung}" />
+                    </DockPanel>
+                    <DockPanel Width="300">
+                        <Label x:Name="lblGroesse" DockPanel.Dock="Left" Width="100" Height="30" Content="Größe:"/>
+                        <TextBox Name="tbGroesse" DockPanel.Dock="Right" Width="200" Height="30" Text="{Binding größe}" />
+                    </DockPanel>
+                    <DockPanel Width="300">
+                        <Label x:Name="lblFarbe" DockPanel.Dock="Left" Width="100" Height="30" Content="Farbe:"/>
+                        <TextBox Name="tbFarbe" DockPanel.Dock="Right" Width="200" Height="30" Text="{Binding farbe}" />
+                    </DockPanel>
+                    <DockPanel Width="300">
+                        <Label x:Name="lblMenge" DockPanel.Dock="Left" Width="100" Height="30" Content="Menge:"/>
+                        <TextBox Name="tbMenge" DockPanel.Dock="Right" Width="200" Height="30" Text="{Binding menge}" />
+                    </DockPanel>
+                    <DockPanel Width="300">
+                        <Label x:Name="lblPreis" DockPanel.Dock="Left" Width="100" Height="30" Content="Preis:"/>
+                        <TextBox Name="tbPreis" DockPanel.Dock="Right" Width="200" Height="30" Text="{Binding preis}" />
+                    </DockPanel>
+                    <DockPanel LastChildFill="False" Width="200">
+                        <Button x:Name="btnHinzufuegen" DockPanel.Dock="Right" Content="Hinzufügen" Width="100" Height="30" Margin="20" Click="btnHinzufuegen_Click"/>
+                    </DockPanel>
+                </StackPanel>
+            </StackPanel>
+            <DockPanel Grid.Row="1" LastChildFill="False" Margin="20">
+                <Button x:Name="btnLoeschen" DockPanel.Dock="Bottom" Content="Löschen" Width="100" Height="30" Click="btnLoeschen_Click"/>
+            </DockPanel>
+            <DockPanel Grid.Column="1" Grid.Row="1" LastChildFill="False" Margin="20">
+                <Button x:Name="btnZurueck" DockPanel.Dock="Bottom" Content="Zurück" Width="100" Height="30" Click="btnZurueck_Click"/>
+            </DockPanel>
+        </Grid>
+    </Viewbox>
+</Window>
