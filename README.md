@@ -30,7 +30,7 @@ Die Anwendung nutzt eine **MySQL-Datenbank über ODBC** und ermöglicht grundleg
 
 ## Installation
 
-- Im Projekt ist eine Datei [`database/miniERP_dump.sql`](database/miniERP_dump.sql) enthalten.
+- Im Projekt ist eine Datei [`database/miniERP.sql`](database/miniERP.sql) enthalten.
 - Diese enthält die komplette Tabellenstruktur und einige Beispieldaten.
 
 ---
@@ -75,7 +75,7 @@ Die Anwendung nutzt eine **MySQL-Datenbank über ODBC** und ermöglicht grundleg
 
 - **Datenbankanbindung:** MySQL über ODBC (`OdbcConnection`, `OdbcCommand`, `OdbcDataAdapter`)
 
-- **Datenbank-Datei:** [`database/miniERP_dump.sql`](database/miniERP_dump.sql) für Tabellenstruktur und Beispieldaten
+- **Datenbank-Datei:** [`database/miniERP.sql`](database/miniERP.sql) für Tabellenstruktur und Beispieldaten
 
 ---
 
